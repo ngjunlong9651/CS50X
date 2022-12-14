@@ -1,0 +1,5 @@
+Firstly create a way to get user input
+Verify that the input matches the minimum of 1 and the maximum of 8 for height
+Have a counter that counts from 1 to the user input and replaces the value with # key instead
+counter + 1
+repeat till counter and user input is the same

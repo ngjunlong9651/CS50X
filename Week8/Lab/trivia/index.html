@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+                let correct_answer = document.querySelector("#correct");
+                let wrong_answer = document.querySelectorAll(".incorrect");
+                let message = document.querySelector('#button-message');
+
+                correct_answer.addEventListener('click',function(){
+                    correct_answer.style.backgroundColor = "green";
+                    message.innerHTML ="Congratulations, you are correct!";
+
+                })
+
+                for (let i =0; i < wrong_answer.length; i++)
+                {
+                    wrong_answer[i].addEventListener('click',function(){
+                        wrong_answer[i].style.backgroundColor="red";
+                        message.innerHTML ="Sorry, you are wrong!";
+                    })
+                }
+
+                document.querySelector("#free-button").addEventListener('click',function(){
+                    let free_input = document.querySelector("input");
+                    let free_message = document.querySelector("#free-message");
+                    if (free_input.value == "Singapore")
+                    {
+                        free_input.style.color="green";
+                        free_message.innerHTML="You suck Lee Kuan Yew's Dick!";
+                    }
+                    else
+                    {
+                        free_input.style.color="red";
+                        free_message.innerHTML="You are wrong, GG to the gulag you go!";
+                    }
+
+                })
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Lee Kwan Yew Fan Page</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3> Who Is Singapore's Best Leader </h3>
+                <button id ="correct"> Lee Kwan Yew </button>
+                <button class ="incorrect"> Anyone Else </button>
+                <button class ="incorrect"> Jamus Lim </button>
+                <button class ="incorrect"> Reasha Khan</button>
+                <p id="button-message"> </p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3> Which country did Lee Kwan Yew build into a first world country</h3>
+                <input type ="text" autofocus placeholder ="Type Your Answer Here: ">
+                <button id="free-button"> Check Answer </button>
+                <p id = "free-message"></p>
+            </div>
+        </div>
+    </body>
+</html>

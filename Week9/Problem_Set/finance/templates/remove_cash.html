@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+    remove_cash
+{% endblock %}
+
+{% block main %}
+
+    <form action="/remove_cash" method="post">
+        <fieldset>
+            <div class ="form-group">
+                <input autocomplet="off" class = "form-control" name ="remove_cash" placeholder="Amount of cash to remove! " type ="text">
+            </div>
+            <div class="form-group">
+                <button class ="btn btn-default" type="submit"> Remove Cash </button>
+
+            </div>
+        </fieldset>
+    </form>
+
+
+{% endblock %}
